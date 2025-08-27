@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SaaS de Comunicação</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>SaaS de Comunicação</h1>
+      <div id="user-info" class="hidden">
+        <span id="username"></span>
+        <button id="logout-btn">Sair</button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Formulários de autenticação -->
+      <div id="auth-forms">
+        <div class="form-container">
+          <h2>Login</h2>
+          <form id="login-form">
+            <div class="form-group">
+              <label for="login-email">Email:</label>
+              <input type="email" id="login-email" required>
+            </div>
+            <div class="form-group">
+              <label for="login-password">Senha:</label>
+              <input type="password" id="login-password" required>
+            </div>
+            <button type="submit">Entrar</button>
+          </form>
+        </div>
+
+        <div class="form-container">
+          <h2>Registro</h2>
+          <form id="register-form">
+            <div class="form-group">
+              <label for="register-name">Nome:</label>
+              <input type="text" id="register-name" required>
+            </div>
+            <div class="form-group">
+              <label for="register-email">Email:</label>
+              <input type="email" id="register-email" required>
+            </div>
+            <div class="form-group">
+              <label for="register-password">Senha:</label>
+              <input type="password" id="register-password" required>
+            </div>
+            <button type="submit">Registrar</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Área de mensagens (visível após login) -->
+      <div id="message-area" class="hidden">
+        <div class="sidebar">
+          <button id="new-message-btn">Nova Mensagem</button>
+          <h3>Suas Mensagens</h3>
+          <ul id="message-list"></ul>
+        </div>
+
+        <div class="content">
+          <div id="message-form-container" class="hidden">
+            <h3>Nova Mensagem</h3>
+            <form id="message-form">
+              <div class="form-group">
+                <label for="message-recipient">Destinatário:</label>
+                <input type="email" id="message-recipient" required>
+              </div>
+              <div class="form-group">
+                <label for="message-subject">Assunto:</label>
+                <input type="text" id="message-subject" required>
+              </div>
+              <div class="form-group">
+                <label for="message-content">Conteúdo:</label>
+                <textarea id="message-content" rows="5" required></textarea>
+              </div>
+              <div class="form-actions">
+                <button type="submit">Enviar</button>
+                <button type="button" id="cancel-message">Cancelar</button>
+              </div>
+            </form>
+          </div>
+
+          <div id="message-details" class="hidden">
+            <div class="message-header">
+              <h3 id="detail-subject"></h3>
+              <div class="message-meta">
+                <span>De: <span id="detail-sender"></span></span>
+                <span>Para: <span id="detail-recipient"></span></span>
+                <span>Data: <span id="detail-date"></span></span>
+              </div>
+            </div>
+            <div class="message-body">
+              <p id="detail-content"></p>
+            </div>
+            <div class="message-actions">
+              <button id="reply-btn">Responder</button>
+              <button id="delete-btn">Excluir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="notification" class="hidden"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
