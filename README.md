@@ -1,6 +1,6 @@
 # SaaS de Comunicação
 
-Um simples SaaS de comunicação baseado em JSON, desenvolvido com Node.js e Express.
+Um simples SaaS de comunicação desenvolvido com Node.js e Express.
 
 ## Funcionalidades
 
